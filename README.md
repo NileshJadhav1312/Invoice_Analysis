@@ -2,24 +2,36 @@
 
 ### AI-Driven Freight Cost Prediction & Invoice Risk Flagging
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B.svg?logo=streamlit)](https://invoiceanalysis3304.streamlit.app/)
+[![Dataset](https://img.shields.io/badge/Dataset-Google%20Drive-34A853.svg?logo=googledrive)](https://drive.google.com/file/d/1o6S9N0j77qM4fd9kbdE2gw2V1TVeh5Ey/view?usp=sharing)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Framework](https://img.shields.io/badge/framework-Streamlit-red.svg)](https://streamlit.io/)
 [![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)](https://scikit-learn.org/)
 [![Database](https://img.shields.io/badge/database-SQLite-lightgrey.svg)](https://www.sqlite.org/)
 
 ---
 
+## 🌐 Live Application
+
+> 🚀 **Live Demo URL**: **[https://invoiceanalysis3304.streamlit.app/](https://invoiceanalysis3304.streamlit.app/)**  
+> Access the interactive web portal directly in your browser without any local setup.
+
+---
+
 ## 📌 Table of Contents
 
+- [Live Application](#-live-application)
 - [Project Overview](#-project-overview)
 - [Business Objectives](#-business-objectives)
-- [Data Sources](#-data-sources)
+- [Data Sources & Database Download](#-data-sources--database-download)
 - [Exploratory Data Analysis & Feature Engineering](#-exploratory-data-analysis--feature-engineering)
 - [Models Used](#-models-used)
 - [Evaluation Metrics & Results](#-evaluation-metrics--results)
 - [Application UI Screenshots](#-application-ui-screenshots)
 - [Project Structure](#-project-structure)
 - [How to Run This Project](#-how-to-run-this-project)
+- [License](#-license)
 - [Author & Contact](#-author--contact)
 
 ---
@@ -64,9 +76,12 @@ This project implements an **end-to-end machine learning system** designed to su
 
 ---
 
-## 🗄️ Data Sources
+## 🗄️ Data Sources & Database Download
 
-The system connects to an internal SQLite database (`inventory.db`) containing transactional procurement data:
+The project utilizes an internal SQLite database (`inventory.db`) containing comprehensive procurement and supply-chain records:
+
+📥 **Download Database File (`inventory.db`)**:  
+👉 **[Google Drive Database Download Link](https://drive.google.com/file/d/1o6S9N0j77qM4fd9kbdE2gw2V1TVeh5Ey/view?usp=sharing)** *(Place downloaded file inside the `data/` folder for local training)*
 
 | Table Name | Description | Key Columns Extracted |
 | :--- | :--- | :--- |
@@ -156,12 +171,13 @@ Users input invoice details (**Invoice Quantity**, **Invoice Dollars**, **Freigh
 ```
 INVOICE/
 ├── app.py                             # Streamlit interactive web portal
-├── requirement.txt                    # Project dependencies
+├── requirements.txt                   # Project dependencies
 ├── README.md                          # Project documentation
+├── LICENSE                            # MIT License
 ├── .gitignore                         # Git ignore configuration
 │
 ├── data/
-│   └── inventory.db                   # SQLite database (transactions & master data)
+│   └── .gitkeep                       # Placeholder for inventory.db database
 │
 ├── images/
 │   ├── freight_prediction_ui.png      # UI screenshot for Freight Prediction
@@ -202,13 +218,15 @@ Make sure your virtual environment (`.venv`) is activated in PowerShell:
 .\.venv\Scripts\Activate.ps1
 ```
 
-### 2. Install Dependencies (If Not Already Installed)
+### 2. Install Dependencies
 ```powershell
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
-### 3. Train Models (Optional)
-To retrain and serialize the models from the SQLite database:
+### 3. (Optional) Download Database for Local Retraining
+Download [`inventory.db`](https://drive.google.com/file/d/1o6S9N0j77qM4fd9kbdE2gw2V1TVeh5Ey/view?usp=sharing) and place it inside the `data/` directory.
+
+To retrain and serialize the models:
 ```powershell
 # Train Freight Cost Prediction Model
 python freight_cost_prediction/train.py
@@ -217,7 +235,7 @@ python freight_cost_prediction/train.py
 python invoice_flagging/train.py
 ```
 
-### 4. Launch Streamlit Web Application
+### 4. Launch Streamlit Web Application Locally
 Run Streamlit using any of the following commands:
 
 ```powershell
@@ -236,8 +254,15 @@ Once launched, open your browser at:
 
 ---
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
 ## 👤 Author & Contact
 
 - **Author**: Nilesh Jadhav
 - **Project**: Vendor Invoice Intelligence System
+- **Live App**: [invoiceanalysis3304.streamlit.app](https://invoiceanalysis3304.streamlit.app/)
 - **Repository**: [Invoice_Analysis](https://github.com/NileshJadhav1312/Invoice_Analysis.git)
